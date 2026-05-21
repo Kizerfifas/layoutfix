@@ -105,7 +105,7 @@ Command in that file must call `layoutfix -selection`, not plain `layoutfix`.
 
 | Problem | Fix |
 |---------|-----|
-| Alt+T / Alt+E does nothing | `source ~/.bashrc`; check `which layoutfix`; use **bash** (not plain `sh`). |
+| Alt+T / Alt+E does nothing | `source ~/.bashrc`; use **bash**. In **Cursor/VS Code** try **Ctrl+]** or **Ctrl+X** then **Ctrl+L**. Add to `settings.json`: `"terminal.integrated.sendKeybindingsToShell": true`. |
 | Works in bash, not in `sh` | Binding is readline-specific; start `bash`. |
 | `command not found: layoutfix` | Ensure `~/.local/bin` is in `PATH`. |
 
@@ -204,7 +204,7 @@ sudo apt install xdotool xclip
 
 | Симптом | Решение |
 |---------|---------|
-| Alt+T / Alt+E не работает | `source ~/.bashrc`; `which layoutfix`; запускайте **bash**, не `sh`. |
+| Alt+T / Alt+E не работает | `source ~/.bashrc`; **bash**. В **Cursor/VS Code** попробуйте **Ctrl+]** или **Ctrl+X**, затем **Ctrl+L**. В `settings.json`: `"terminal.integrated.sendKeybindingsToShell": true`. |
 | Нет `layoutfix` | Добавьте `~/.local/bin` в `PATH`. |
 
 ### Разработка

@@ -1,5 +1,4 @@
 # layoutfix — readline hotkeys for the current command line (no X11).
-# Alt+T / Alt+E (and Alt+е on RU keyboard — same key as T on many terminals).
 
 _layoutfix_cmd() {
   local bin="${LAYOUTFIX_BIN:-layoutfix}"
@@ -12,10 +11,12 @@ _layoutfix_cmd() {
 }
 
 _layoutfix_bind() {
-  bind -x "$1": _layoutfix_cmd 2>/dev/null || true
+  bind -x "$1" 2>/dev/null || true
 }
 
 if [[ -n ${BASH_VERSION-} ]]; then
-  _layoutfix_bind '"\et"'   # Alt+T / Alt+е (клавиша «е» в ЙЦУКЕН)
-  _layoutfix_bind '"\ee"'   # Alt+E
+  _layoutfix_bind '"\et": _layoutfix_cmd'    # Alt+T / Alt+е
+  _layoutfix_bind '"\ee": _layoutfix_cmd'    # Alt+E
+  _layoutfix_bind '"\C-]": _layoutfix_cmd'       # Ctrl+] — fallback в Cursor/VS Code
+  _layoutfix_bind '"\C-x\C-f": _layoutfix_cmd' # Ctrl+X, затем Ctrl+F — fallback
 fi
