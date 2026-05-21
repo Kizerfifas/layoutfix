@@ -1,0 +1,10 @@
+# Global hotkey Alt+T for layoutfix (X11).
+# Install: sudo apt install xbindkeys
+# Run:    xbindkeys -f /path/to/layoutfix/config/xbindkeys.rc
+# Autostart: add the same command to your session startup.
+
+"/usr/local/bin/layoutfix -selection"
+  Alt + t
+
+"/usr/local/bin/layoutfix -selection"
+  Alt + e
